@@ -1,4 +1,4 @@
-// You are given an integer n. You need to check whether it is an armstrong number or not. Return true if it is an armstrong number, otherwise return false.
+//Ques: You are given an integer n. You need to check whether it is an armstrong number or not. Return true if it is an armstrong number, otherwise return false.
 // An armstrong number is a number which is equal to the sum of the digits of the number, raised to the power of the number of digits.
 
 #include<iostream>
@@ -33,6 +33,6 @@ int main(){
     } else {
         cout << origNum << " is not an armstrong number." << endl;
     }
-    
+
     return 0;
 }
