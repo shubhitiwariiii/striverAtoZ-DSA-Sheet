@@ -1,9 +1,11 @@
+//Ques: A palindrome number is a number which reads the same both left to right and right to left.
+
 #include<iostream>
 using namespace std;
 
 int main(){
     int n;
-    
+
     cout << "Enter a number: ";
     cin >> n;
     
