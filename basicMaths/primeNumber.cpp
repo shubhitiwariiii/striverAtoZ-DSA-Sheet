@@ -39,30 +39,3 @@ int main(){
     
     return 0;
 }
-// bool checkPrime(int n){
-//     if(n <= 1) return false; // 0 and 1 are not prime numbers
-
-//     for(int i=2; i*i <= n; i++){ // Check divisors from 2 to sqrt(n)
-//         if(n % i == 0){
-//             return false; // Found a divisor, not a prime number
-//         }
-//     }
-//     return true; // No divisors found, it's a prime number
-// }
-// int main(){
-//     int n;
-//     cout << "Enter the number: ";
-//     cin >> n;
-
-//     bool isPrime = checkPrime(n);
-
-//     if(isPrime){
-//         cout << n << " is a prime number."<< endl;
-//     }
-
-//     else{
-//          cout << n << " is not a prime number."<< endl;
-//     }
-    
-//     return 0;
-// }
