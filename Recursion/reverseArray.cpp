@@ -2,12 +2,20 @@
 #include <iostream>
 using namespace std;
 
+// void reverseArray(int arr[], int start, int end) {
+//     if (start >= end) {
+//         return;
+//     }
+//     swap(arr[start], arr[end]);
+//     reverseArray(arr, start + 1, end - 1);
+// }
 void reverseArray(int arr[], int start, int end) {
-    if (start >= end) {
-        return;
+    int st = start, en = end;
+    while(st < en) {
+        swap(arr[st], arr[en]);
+        st++;
+        en--;
     }
-    swap(arr[start], arr[end]);
-    reverseArray(arr, start + 1, end - 1);
 }
 
 int main() {
