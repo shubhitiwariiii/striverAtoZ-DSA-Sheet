@@ -24,6 +24,24 @@ int highestFreqEle(vector<int> &arr){
     }
     return ans;
 }
+int lowestFreqEle(vector<int> &arr){
+    unordered_map<int,int> freqMap;
+    for(int i=0;i<arr.size();i++){
+        freqMap[arr[i]]++;
+    }
+    int minFreq=arr.size()+1;
+    int ans=-1;
+    for(auto it:freqMap){
+        if(it.second<minFreq){
+            minFreq=it.second;
+            ans=it.first;
+        }
+        else if(it.second==minFreq && it.first<ans){
+            ans=it.first;
+        }
+    }
+    return ans;
+}
 int main(){
     int n;
     cout<<"Enter size of array: ";
@@ -35,6 +53,8 @@ int main(){
     }
     int res=highestFreqEle(arr);
     cout<<"Most frequent element (smallest in case of tie) is: "<<res<<endl;
+    res=lowestFreqEle(arr);
+    cout<<"Least frequent element (smallest in case of tie) is: "<<res<<endl;
     return 0;
 }
 
