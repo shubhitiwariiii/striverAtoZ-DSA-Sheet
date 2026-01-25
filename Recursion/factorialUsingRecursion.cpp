@@ -1,4 +1,4 @@
-// You are given an integer n. Return the value of n! or n factorial.
+//ques1 : You are given an integer n. Return the value of n! or n factorial.
 // Factorial of a number is the product of all positive integers less than or equal to that number.
 #include <iostream>
 using namespace std;
