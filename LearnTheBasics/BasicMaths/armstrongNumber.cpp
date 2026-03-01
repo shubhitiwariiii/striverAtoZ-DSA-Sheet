@@ -10,28 +10,17 @@ int main(){
     cin >> n;
     int origNum = n;
     int sum = 0;
-    int count = 0;
-    int temp = n;
-    // Count the number of digits
-    while (temp > 0) {
-        temp /= 10;
-        count++;
+    
+    while(n>0){
+        int ld = n%10;
+        sum += (ld*ld*ld);
+        n /= 10;
     }
-    temp = n;
-    // Calculate the sum of digits raised to the power of count
-    while (temp > 0) {
-        int digit = temp % 10;
-        int power = 1;
-        for (int i = 0; i < count; i++) {
-            power *= digit;
-        }
-        sum += power;
-        temp /= 10;
-    }
-    if (sum == origNum) {
-        cout << origNum << " is an armstrong number." << endl;
-    } else {
-        cout << origNum << " is not an armstrong number." << endl;
+    cout << "sum is : " << sum << endl;
+    if(origNum == sum){
+        cout << "number is armstrong number." << endl;
+    }else{
+        cout << "number is armstrong number." << endl;
     }
 
     return 0;
