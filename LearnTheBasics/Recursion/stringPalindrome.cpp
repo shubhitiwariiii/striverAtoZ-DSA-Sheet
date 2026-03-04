@@ -1,29 +1,19 @@
-#include<iostream>
-#include<string>
+#include<bits/stdc++.h>
 using namespace std;
 
-bool isPalindrome(string str, int start, int end) {
-    // Base case: If the start index is greater than or equal to the end index
-    if (start >= end) {
-        return true;
-    }
-    // If characters at start and end indices do not match
-    if (str[start] != str[end]) {
+
+bool isPalindrome(int i,string &s){
+    if(i >= s.size()/2) return true;
+    if(s[i] != s[s.size()-i-1]){
         return false;
     }
-    // Recursive case: Check the next pair of characters
-    return isPalindrome(str, start + 1, end - 1);
+    return isPalindrome(i+1, s);
 }
-int main() {
-    string str;
-    cout << "Enter a string: ";
-    cin >> str;
+int main(){
+    string s;
+    cout <<"enter the string you want to check: ";
+    cin >> s;
 
-    if (isPalindrome(str, 0, str.length() - 1)) {
-        cout << str << " is a palindrome." << endl;
-    } else {
-        cout << str << " is not a palindrome." << endl;
-    }
-
+    cout << isPalindrome(0,s);
     return 0;
 }
