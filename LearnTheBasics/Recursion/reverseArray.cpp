@@ -1,45 +1,60 @@
-// Given an array arr of n elements. The task is to reverse the given array. The reversal of array should be inplace.
-#include <iostream>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-// void reverseArray(int arr[], int start, int end) {
-//     if (start >= end) {
+// void reverseArr(int i,int a[], int n){
+//     if(i >= n/2){
 //         return;
 //     }
-//     swap(arr[start], arr[end]);
-//     reverseArray(arr, start + 1, end - 1);
+//     swap(a[i] , a[n-i-1]);
+//     reverseArr(i+1,a, n);
 // }
-void reverseArray(int arr[], int start, int end) {
-    int st = start, en = end;
-    while(st < en) {
-        swap(arr[st], arr[en]);
-        st++;
-        en--;
+// int main(){
+//     int n;
+//     cout << "size of arr: ";
+//     cin >> n;
+
+//     int a[n];
+
+//     for(int i=0; i<n; i++){
+//         cin >> a[i];
+//     }
+
+//     reverseArr(0,a, n);
+    
+//     for(int i=0; i<n; i++){
+//         cout << a[i] << " ";
+//     }
+//     return 0;
+// }
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void reverseArray(int i, int a[], int n){
+    if(i >= n/2){
+        return;
     }
+
+    swap(a[i], a[n-i-1]);
+    reverseArray(i+1, a, n);
 }
 
-int main() {
+int main(){
     int n;
-    cout << "Enter the size of the array: ";
+    cout << "size of arr: ";
     cin >> n;
-    
-    int arr[n];
-    cout << "Enter the elements of the array: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+
+    int a[n];
+
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
     }
-    
-    cout << "Original array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+
+    reverseArray(0, a, n);
+
+    for(int i = 0; i < n; i++){
+        cout << a[i] << " ";
     }
-    
-    reverseArray(arr, 0, n - 1);
-    
-    cout << "\nReversed array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-    
+
     return 0;
 }
