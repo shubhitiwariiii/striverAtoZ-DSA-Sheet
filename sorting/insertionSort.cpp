@@ -1,9 +1,7 @@
-// Given an array of integers called nums, sort the array in non-decreasing order using the insertion sort algorithm and return the sorted array.
-// A sorted array in non-decreasing order is an array where each element is greater than or equal to all preceding elements in the array.
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-//INSERTION SORT
+//INSERTION SORT -> takes an element and place it in correct position.
 
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
@@ -12,16 +10,26 @@ void printArray(int arr[], int n){
     cout << endl;
 }
 
-void insertionSort(int arr[], int n){
+// void insertionSort(int arr[], int n){
+//     for(int i=0; i<n; i++){
+//         int curr = arr[i];
+//         int prev = i-1;
+//         while(prev >= 0 && arr[prev] > curr){
+//             swap(arr[prev], arr[prev+1]);
+//             prev--;
+//         }
+//         arr[prev+1] = curr;
+//     }
+//     printArray(arr,n);
+// }
 
+void insertionSort(int arr[],int n){
     for(int i=0; i<n; i++){
-        int curr = arr[i];
-        int prev = i-1;
-        while(prev >= 0 && arr[prev] > curr){
-            swap(arr[prev], arr[prev+1]);
-            prev--;
+        int j = i;
+        while(j>0 && arr[j-1] > arr[i]){
+            swap(arr[j-1], arr[j]);
+            j--;
         }
-        arr[prev+1] = curr;
     }
     printArray(arr,n);
 }
