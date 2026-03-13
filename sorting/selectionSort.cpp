@@ -1,12 +1,7 @@
-// Given an array of integers nums, sort the array in non-decreasing order using the selection sort algorithm and return the sorted array.
-// A sorted array in non-decreasing order is an array where each element is greater than or equal to all previous elements in the array.
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 //SELECTION SORT
-
-
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
         cout << arr[i] << " ";
@@ -15,15 +10,14 @@ void printArray(int arr[], int n){
 }
 
 void selectionSort(int arr[], int n){
-
     for(int i=0; i<n-1; i++){
-        int minidx = i;
-        for(int j=i+1; j<n; j++){
-            if(arr[j] < arr[minidx]){
-                minidx = j;
+        int minIdx = i;
+        for(int j=i; j<n; j++){
+            if(arr[j] < arr[minIdx]){
+                minIdx = j;
             }
         }
-        swap(arr[i], arr[minidx]);
+        swap(arr[minIdx],arr[i]);
     }
     printArray(arr,n);
 }
