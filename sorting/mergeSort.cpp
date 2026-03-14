@@ -1,64 +1,68 @@
-#include <iostream>
-#include <vector>
-#include<string>
+#include <bits/stdc++.h>
 using namespace std;
 
-//MERGE SORT
-void merge(int arr[], int si, int mid, int ei){
-    vector<int>temp;
-    int i = si;
-    int j = mid+1;
-    while(i <= mid && j <= ei){
-        if(arr[i]<=arr[j]){
-            temp.push_back(arr[i++]);
-        } else{
-            temp.push_back(arr[j++]);
+// merge
+void merge(int arr[], int low, int mid, int high)
+{
+    vector<int> temp;
+    int left = low;
+    int right = mid + 1;
+
+    while (left <= mid && right <= high)
+    {
+        if (arr[left] <= arr[right])
+        {
+            temp.push_back(arr[left++]);
+        }
+        else
+        {
+            temp.push_back(arr[right++]);
         }
     }
-    while(i<=mid){
-        temp.push_back(arr[i++]);
-    }
-    while(j<=ei){
-        temp.push_back(arr[j++]);
-    }
+    while (left <= mid)
+        temp.push_back(arr[left++]);
+    while (right <= high)
+        temp.push_back(arr[right++]);
 
-    //vector element copy in original array
-    for(int idx=si, x=0; idx<=ei; idx++){
-        arr[idx] = temp[x++];
+    for (int i = low; i <= high; i++)
+    {
+        arr[i] = temp[i - low];
     }
 }
-
-void mergeSort(int arr[],int si, int ei){
-    if(si >= ei){
+// mergesort
+void mergeSort(int arr[], int low, int high)
+{
+    if (low >= high)
         return;
-    }
+    int mid = (low + high) / 2;
 
-    int mid = si + (ei - si) / 2;
-
-    mergeSort(arr, si, mid);//left half
-    mergeSort(arr, mid+1, ei);//right half
-
-    merge(arr, si, mid, ei);//conquer
+    mergeSort(arr, low, mid);
+    mergeSort(arr, mid + 1, high);
+    merge(arr, low, mid, high);
 }
 
-void printArray(int arr[], int n){
-    for(int i=0; i<n; i++){
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
         cout << arr[i] << " ";
     }
     cout << endl;
 }
-int main(){
+int main()
+{
     int n;
     cout << "Enter the size of the array: ";
     cin >> n;
 
     int arr[n];
     cout << "Enter the elements of the array: ";
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
     }
 
-    mergeSort(arr, 0, n-1);
+    mergeSort(arr, 0, n - 1);
     printArray(arr, n);
 
     return 0;
