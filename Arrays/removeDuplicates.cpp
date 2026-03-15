@@ -18,6 +18,7 @@ int removeDuplicates(int arr[], int n){
 }
 
 //OPTIMAL APPROACH -> TC : O(N), SC : O(1)
+// applicable only when the array is sorted
 
 int removeDuplicates(int arr[], int n){
     int i = 0;
