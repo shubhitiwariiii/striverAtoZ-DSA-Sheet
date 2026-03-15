@@ -1,0 +1,10 @@
+# Compiled outputs (anywhere)
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.dll
+*.so
+*.dylib
+*.class 
