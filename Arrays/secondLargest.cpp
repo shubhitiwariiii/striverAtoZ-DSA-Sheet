@@ -44,19 +44,19 @@ int main(){
 
     //BETTER APPROACH
 
-    // int largest = arr[0];
-    // int sLargest = INT_MIN; // Assuming all elements are non-negative
-    // for(int i=0; i<n; i++){
-    //     if(arr[i] > largest){
-    //         largest = arr[i];
-    //     }
-    // }
-    // for(int i=0; i<n; i++){
-    //     if(arr[i] > sLargest && arr[i] != largest){
-    //         sLargest = arr[i];
-    //     }
-    // }
-    // cout << sLargest;
+    int largest = arr[0];
+    int sLargest = INT_MIN; // Assuming all elements are non-negative
+    for(int i=0; i<n; i++){
+        if(arr[i] > largest){
+            largest = arr[i];
+        }
+    }
+    for(int i=0; i<n; i++){
+        if(arr[i] > sLargest && arr[i] != largest){
+            sLargest = arr[i];
+        }
+    }
+    cout << sLargest;
 
     //OPTIMAL APPROACH
     
