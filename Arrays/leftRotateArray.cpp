@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int leftRotateArray(int a[], int n){
+int leftRotateArray(int a[], int n){ //TC: O(N)
     int temp = a[0];
     for(int i=1; i<n; i++){
         a[i-1] = a[i];
