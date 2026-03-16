@@ -2,19 +2,27 @@
 using namespace std;
 
 
-int leftRotateArrayKPlaces(int a[], int n, int k){
-    k = k%n;
+// int leftRotateArrayKPlaces(int a[], int n, int k){
+//     k = k%n;
 
-    int temp[k];
-    for(int i = 0; i < k; i++){
-        temp[i] = a[i];
-    }
-    for(int i=k; i<n; i++){
-        a[i-k] = a[i];
-    }
-    for(int i=n-k; i<n; i++){
-        a[i] = temp[i - (n-k)];
-    }
+//     int temp[k];
+//     for(int i = 0; i < k; i++){
+//         temp[i] = a[i];
+//     }
+//     for(int i=k; i<n; i++){
+//         a[i-k] = a[i];
+//     }
+//     for(int i=n-k; i<n; i++){
+//         a[i] = temp[i - (n-k)];
+//     }
+// }
+
+//optimal approach -> TC: O(N), SC: O(1)
+
+int leftRotateArrayKPlaces(int a[], int n, int k){
+   reverse(a , a + k);
+   reverse(a + k, a + n);
+   reverse(a , a + n);
 }
 
 int main(){
